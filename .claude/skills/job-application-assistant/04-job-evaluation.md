@@ -44,9 +44,9 @@ How well do the required/preferred skills align with the candidate's capabilitie
 | 40-59 | Partial match, significant upskilling needed |
 | 0-39 | Fundamental mismatch |
 
-**Strong match areas:** [YOUR_PRIMARY_SKILLS]
-**Moderate match areas:** [YOUR_SECONDARY_SKILLS]
-**Weak match areas:** [SKILLS_YOU_LACK]
+**Strong match areas:** C#, .NET, TypeScript, Angular, Python, SQL, GenAI/SDLC automation, Multi-Agent Systems, GitHub Copilot, MCP, CI/CD, Azure DevOps
+**Moderate match areas:** React.js, Node.js, cloud infrastructure (Azure basics), REST API design
+**Weak match areas:** ML model research/training, Java/Spring, mobile development, data science/statistics
 
 ### 2. Experience Match (0-100)
 Does work history align with what they're looking for?
@@ -58,9 +58,9 @@ Does work history align with what they're looking for?
 | 40-59 | Adjacent experience, would need to make the case |
 | 0-39 | Unrelated experience |
 
-**Strong:** [YOUR_DIRECT_EXPERIENCE_DOMAINS]
-**Moderate:** [YOUR_ADJACENT_EXPERIENCE]
-**Entry-level:** [ROLES_WITH_LIMITED_EXPERIENCE]
+**Strong:** Full-stack .NET/Angular enterprise software, GenAI-assisted SDLC automation, multi-agent AI systems, source-code analysis tooling, CI/CD and DevOps automation
+**Moderate:** Applied AI engineering, technical consulting, architecture analysis, developer tooling
+**Entry-level:** Cloud-native architecture (Azure), dedicated ML engineering, data science
 
 ### 3. Behavioral/Culture Fit (0-100)
 Does the role and company culture match the behavioral profile?
@@ -75,9 +75,11 @@ Does the role and company culture match the behavioral profile?
 **Red flags to research:** Department disorganization, work dominated by maintenance over development, poor chemistry with leadership, culture mismatches. Check reviews, media coverage, LinkedIn connections, and network contacts for insider perspective.
 
 ### 4. Location & Logistics (Pass/Fail + Notes)
-- Within commute range: PASS
-- Remote with occasional office: PASS
-- Requires relocation: FAIL (deal-breaker)
+- Hyderabad (ideal): PASS
+- Mumbai (ideal): PASS
+- Bengaluru (acceptable): PASS
+- Remote/Hybrid (India): PASS
+- Other cities requiring relocation outside above: FAIL
 - Frequent international travel: FLAG (discuss with user)
 
 ### 5. Career Alignment & Motivation (0-100)
@@ -91,19 +93,19 @@ Does this role advance career goals and contain tasks that energize?
 | 0-39 | Dead end or backwards step |
 
 **Career goals:**
-- [YOUR_CAREER_GOAL_1]
-- [YOUR_CAREER_GOAL_2]
-- [YOUR_CAREER_GOAL_3]
+- Grow into a Senior / Lead Engineer role with AI/GenAI focus within 2-3 years.
+- Gain significant salary appraisal (minimum 80% hike on current 6L CTC; target up to 150%).
+- Work in an environment where learning and career progression are actively supported.
 
 **Motivation filter:** Evaluate not just whether you *can* do the tasks, but whether the tasks will *energize* you. Consider:
-- Tasks that energize: [YOUR_ENERGIZING_TASKS]
-- Tasks that drain: [YOUR_DRAINING_TASKS]
-- Non-task factors: leadership style, department culture, company values, degree of autonomy
+- Tasks that energize: Building AI-powered systems, designing multi-agent architectures, greenfield feature delivery, SDLC automation, full-stack development with modern tooling.
+- Tasks that drain: Pure legacy maintenance with no AI/modern tooling, no autonomy, bureaucratic environments with no learning path.
+- Non-task factors: Appraisal cycle frequency, learning budgets, tech stack modernity, team autonomy.
 
 **Life situation alignment:** Consider personal constraints:
-- **Security**: [YOUR_FINANCIAL_SITUATION_CONTEXT]
-- **Flexibility**: [YOUR_SCHEDULE_CONSTRAINTS]
-- **Professional development**: [YOUR_GROWTH_PRIORITIES]
+- **Salary:** Current CTC is 6 LPA. Minimum acceptable is 10.8 LPA (80% hike). Target is 15 LPA (150% hike).
+- **Location:** Hyderabad or Mumbai strongly preferred; Bengaluru acceptable.
+- **Professional development:** Strong emphasis on growth, appraisal recognition, and AI/GenAI exposure.
 
 ### 6. Salary Benchmark (Optional)
 
