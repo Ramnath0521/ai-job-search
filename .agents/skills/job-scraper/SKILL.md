@@ -83,6 +83,8 @@ Use `WebSearch` for:
 
 Use the site-specific query strings from `search-queries.md` directly as WebSearch queries for these portals.
 
+**If `firecrawl-search` is enabled** (see `.agents/skills/firecrawl-search/SKILL.md` — it needs a `FIRECRAWL_API_KEY` and ships `enabled: false` until one is set), prefer `firecrawl-search search --domain <host>` over a bare WebSearch for portals with no dedicated CLI (Naukri, FoundIt): it returns structured results and can render each hit's full page, rather than a snippet-only web search. It costs Firecrawl credits, so keep it to portals actually named in `search-queries.md` — don't use it as a blanket replacement for the free CLIs.
+
 ### Step 2: Fetch & Parse
 
 For each promising result from Step 1:
@@ -94,6 +96,14 @@ command (see its SKILL.md — do not guess flags) to extract **key requirements*
 
 **From WebSearch results:** Use `WebFetch` on the posting URL and extract the same
 fields manually.
+
+**If a posting page returns empty** (common on client-side-rendered ATS pages —
+Workday `*.myworkdayjobs.com`, Ashby `jobs.ashbyhq.com`, some Greenhouse-embedded
+listings) and `firecrawl-search` is enabled, retry with
+`firecrawl-search detail <url>` before marking the job `expired` — it renders the
+page's JavaScript and often recovers content a plain fetch cannot see. This does
+not help with auth-gated pages (LinkedIn's login wall) or genuinely removed
+postings — those are still marked `expired`.
 
 For every candidate:
 - Skip if the URL or company+title combo already exists in `seen_jobs.json`

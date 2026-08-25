@@ -1,0 +1,19 @@
+{
+  "name": "firecrawl-cli",
+  "version": "1.0.0",
+  "description": "CLI wrapping the Firecrawl hosted API (api.firecrawl.dev) for general web search and JS-rendering page scrape. Fills two gaps the other portal skills don't cover: searching job boards without a dedicated CLI (Naukri, FoundIt, ...) and rendering client-side-rendered posting pages (Workday, Ashby, Greenhouse-embedded) that return empty from a plain fetch. Requires FIRECRAWL_API_KEY.",
+  "type": "module",
+  "main": "src/cli.ts",
+  "bin": {
+    "firecrawl-search": "src/cli.ts"
+  },
+  "scripts": {
+    "start": "bun run src/cli.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "@types/bun": "1.3.14"
+  }
+}
