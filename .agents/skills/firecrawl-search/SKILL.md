@@ -10,7 +10,7 @@ description: >
   this posting won't load, the page came back empty, render this job page,
   scrape this URL, JS-rendered job page.
 context: fork
-enabled: false  # requires FIRECRAWL_API_KEY (paid API past the free tier) — set to true once a key is provisioned
+enabled: true  # requires FIRECRAWL_API_KEY (paid API past the free tier) — export it before use
 allowed-tools: Bash(bun run .agents/skills/firecrawl-search/cli/src/cli.ts *)
 ---
 
@@ -45,11 +45,22 @@ tier exists, enough for light use) and:
 export FIRECRAWL_API_KEY="fc-..."
 ```
 
-This skill ships with `enabled: false` in its frontmatter — `/scrape` and
-`/rank` will silently skip it until you flip that to `true` (or ask the
-assistant to do it once a key is set). Treat it as a **supplementary source**:
-the free portal CLIs should still carry most of the load; reach for this when
-they come up empty or to widen coverage to a board they don't touch.
+Treat it as a **supplementary source**: the free portal CLIs should still
+carry most of the load; reach for this when they come up empty or to widen
+coverage to a board they don't touch.
+
+**Live-verified 2026-08-25** against the real API:
+- `search --domain naukri.com` returned real, relevant Naukri results.
+- `detail <url>` correctly rendered two Workday postings that had returned
+  empty during a prior `/rank` run — both turned out to be genuinely closed
+  ("This job is no longer available" / "The page you are looking for doesn't
+  exist"), which is itself useful: a confirmed answer instead of an ambiguous
+  empty fetch that gets misread as "maybe still open, tooling just failed."
+- `detail <url>` on an Ashby-hosted posting (`jobs.ashbyhq.com`) that a plain
+  `WebFetch` had only returned the page title for recovered the **full**
+  posting text (112 lines) at the default `--wait-for 0` — no extra render
+  wait needed in that case, though a slower-loading SPA might still benefit
+  from `--wait-for 2000`-`5000`.
 
 ## When to use this skill
 

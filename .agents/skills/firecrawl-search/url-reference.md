@@ -13,14 +13,12 @@ unauthenticated read — get a key at https://www.firecrawl.dev/app/api-keys
 A missing key is caught client-side with a clear message; a rejected key
 (401/403) surfaces the API's own error text.
 
-Verified against the documented API (not live-tested — no key was available
-at registration time; verify against a real key before relying on this in
-production):
+**Live-verified 2026-08-25** with a real API key:
 
-| Endpoint | Purpose |
-|----------|---------|
-| `POST /v2/search` | Open web search, optionally with each hit's page rendered to markdown |
-| `POST /v2/scrape` | Render one URL (JS included) and return markdown + metadata |
+| Endpoint | Purpose | Verified |
+|----------|---------|----------|
+| `POST /v2/search` | Open web search, optionally with each hit's page rendered to markdown | ✅ `--domain naukri.com` returned real, relevant results |
+| `POST /v2/scrape` | Render one URL (JS included) and return markdown + metadata | ✅ Recovered a full posting from an Ashby SPA that a plain fetch only returned the title for; correctly confirmed two genuinely-closed Workday postings as closed rather than returning an ambiguous empty result |
 
 ## `POST /v2/search`
 
