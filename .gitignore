@@ -2,6 +2,11 @@
 node_modules/
 bun.lock
 
+# Secrets (API keys, etc.) — Bun auto-loads .env from the repo root
+.env
+.env.*
+!.env.example
+
 # Python
 __pycache__/
 *.pyc
