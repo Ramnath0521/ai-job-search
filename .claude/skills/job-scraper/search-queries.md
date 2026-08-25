@@ -4,7 +4,7 @@
 
 `/scrape` discovers every portal skill under `.agents/skills/*/SKILL.md` and runs its CLI first. Shipped country-agnostic CLIs include `linkedin-search` and `freehire-search`; Danish demos and any skill you add with `/add-portal` are included the same way. You do **not** need a matching `site:` line below for those CLIs to run.
 
-The `site:` query templates in this file are the **WebSearch fallback** — for portals without a CLI, company career pages, or when a CLI fails. If `FIRECRAWL_API_KEY` is set (see `.agents/skills/firecrawl-search/SKILL.md`), prefer `firecrawl-search search --domain naukri.com` / `--domain foundit.in` over the bare WebSearch `site:` fallback below for those two — it returns structured, individually-fetchable results instead of a snippet list.
+The `site:` query templates in this file are the **WebSearch fallback** — for portals without a CLI, company career pages, or when a CLI fails. `firecrawl-search search --domain naukri.com`/`--domain foundit.in` was tried live and found to return **category listing pages**, not individual job postings (see `.agents/skills/firecrawl-search/url-reference.md`) — don't use it as a Naukri/FoundIt-specific replacement for the WebSearch fallback below. If `FIRECRAWL_API_KEY` is set, it's still useful for an unscoped open-web `search`, and `detail <url>` remains the right tool for recovering a specific posting that returned empty (see Step 2 below).
 
 ## Search Sites
 

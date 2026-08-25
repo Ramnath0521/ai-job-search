@@ -50,7 +50,6 @@ carry most of the load; reach for this when they come up empty or to widen
 coverage to a board they don't touch.
 
 **Live-verified 2026-08-25** against the real API:
-- `search --domain naukri.com` returned real, relevant Naukri results.
 - `detail <url>` correctly rendered two Workday postings that had returned
   empty during a prior `/rank` run — both turned out to be genuinely closed
   ("This job is no longer available" / "The page you are looking for doesn't
@@ -61,6 +60,12 @@ coverage to a board they don't touch.
   posting text (112 lines) at the default `--wait-for 0` — no extra render
   wait needed in that case, though a slower-loading SPA might still benefit
   from `--wait-for 2000`-`5000`.
+- `search --domain naukri.com`/`--domain foundit.in` returned **category
+  listing pages**, not individual job postings — see `url-reference.md` for
+  the full caveat. Use `linkedin-search`/`freehire-search` for real individual
+  postings; reach for `firecrawl-search search` for an **unscoped** open-web
+  query, not as a Naukri/FoundIt-specific tool, until a `crawl`/`map` follow-up
+  step is built to turn a category page into individual job leads.
 
 ## When to use this skill
 

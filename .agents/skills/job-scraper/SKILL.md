@@ -83,7 +83,7 @@ Use `WebSearch` for:
 
 Use the site-specific query strings from `search-queries.md` directly as WebSearch queries for these portals.
 
-**If `FIRECRAWL_API_KEY` is set** (see `.agents/skills/firecrawl-search/SKILL.md`), prefer `firecrawl-search search --domain <host>` over a bare WebSearch for portals with no dedicated CLI (Naukri, FoundIt): it returns structured results and can render each hit's full page, rather than a snippet-only web search. It costs Firecrawl credits, so keep it to portals actually named in `search-queries.md` — don't use it as a blanket replacement for the free CLIs.
+`firecrawl-search search --domain naukri.com`/`--domain foundit.in` was tried live and returns **category listing pages** for those two sites, not individual job postings — do not use it as a Naukri/FoundIt-specific replacement for the WebSearch fallback here (see `.agents/skills/firecrawl-search/url-reference.md`). If `FIRECRAWL_API_KEY` is set, `firecrawl-search search` is still useful for an unscoped open-web query, and its `detail <url>` command is the right tool below for recovering a specific posting that returned empty.
 
 ### Step 2: Fetch & Parse
 

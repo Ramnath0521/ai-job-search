@@ -17,8 +17,29 @@ A missing key is caught client-side with a clear message; a rejected key
 
 | Endpoint | Purpose | Verified |
 |----------|---------|----------|
-| `POST /v2/search` | Open web search, optionally with each hit's page rendered to markdown | ✅ `--domain naukri.com` returned real, relevant results |
+| `POST /v2/search` | Open web search, optionally with each hit's page rendered to markdown | ⚠️ See caveat below |
 | `POST /v2/scrape` | Render one URL (JS included) and return markdown + metadata | ✅ Recovered a full posting from an Ashby SPA that a plain fetch only returned the title for; correctly confirmed two genuinely-closed Workday postings as closed rather than returning an ambiguous empty result |
+
+### Caveat found in testing: `search --domain naukri.com`/`foundit.in` returns listing pages, not job URLs
+
+A live test searching `naukri.com` and `foundit.in` for specific roles returned
+**category/search-results landing pages** (e.g. `naukri.com/platform-engineer-jobs-in-hyderabad-secunderabad`,
+`foundit.in/search/fresher-ai-engineer-jobs-in-bengaluru-bangalore`) rather than
+individual job-posting URLs. Both sites are heavily JS-driven for their deep job
+pages, so a general web search indexes their category pages, not the individual
+listings underneath them — the same reason they have no dedicated portal CLI in
+this repo in the first place.
+
+**What this means in practice:** `firecrawl-search search --domain naukri.com`
+is not yet a working substitute for a real Naukri/FoundIt API — it surfaces
+category pages, and turning those into individual job leads would need a
+follow-up `crawl`/`map` step (visiting the category page, extracting job links,
+scraping each one) that this skill's `search`/`detail` pair doesn't do. Until
+that's built, prefer the `linkedin-search`/`freehire-search` CLIs for real
+individual postings, and treat `firecrawl-search search` as most reliable for
+its proven use case — an **unscoped** open-web query — rather than as a Naukri/
+FoundIt-specific tool. `detail <url>`'s JS-rendering recovery (the other half
+of this skill) is unaffected by this caveat and works as designed.
 
 ## `POST /v2/search`
 
