@@ -103,8 +103,8 @@ Does this role advance career goals and contain tasks that energize?
 - Non-task factors: Appraisal cycle frequency, learning budgets, tech stack modernity, team autonomy.
 
 **Life situation alignment:** Consider personal constraints:
-- **Salary:** Current CTC is 6 LPA. Minimum acceptable is 10.8 LPA (80% hike). Target is 15 LPA (150% hike).
-- **Location:** Hyderabad or Mumbai strongly preferred; Bengaluru acceptable.
+- **Salary:** Current CTC is 6 LPA. Target range is 11-15 LPA. Treat likely offers below 10.5-11 LPA as a meaningful negative unless the role offers exceptional learning, brand value, or a clearly faster growth path. Compensation beyond 15-16 LPA is a strong positive, not a reason to exclude the role.
+- **Location:** Hyderabad is first priority, Mumbai second, Bengaluru third. Pune and remote roles based in India are acceptable with a clear role fit.
 - **Professional development:** Strong emphasis on growth, appraisal recognition, and AI/GenAI exposure.
 
 ### 6. Salary Benchmark (Optional)
@@ -128,6 +128,13 @@ Present findings as:
 Interpret results relative to the baseline defined in the data file's metadata. For index-based data, higher typically means above-market compensation.
 
 If the salary tool is not configured, skip this section.
+
+### Compensation Screening (when pay is stated or credibly estimated)
+
+- **Strong positive:** Expected compensation is in or above the 11-15 LPA target range.
+- **Neutral / investigate:** Pay is undisclosed and the company/role has credible growth signals.
+- **Material concern:** Expected compensation is below 10.5-11 LPA.
+- **Override:** A lower-paying role may remain viable only where the learning, scope, company quality, or near-term progression is unusually strong; state that trade-off explicitly.
 
 ## Output Format
 

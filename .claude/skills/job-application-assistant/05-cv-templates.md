@@ -4,6 +4,20 @@ framework_version: 1.3.0
 
 # CV Templates and Tailoring Guide
 
+<!-- BEGIN ACTIVE-TEMPLATE (managed by /add-template - do not edit by hand) -->
+> **Active template override: `lato-raleway-modern`**
+>
+> A custom template is active. Where this block conflicts with the stock guidance below, this block wins. Structural advice below (tailoring, page-budget, cutting rules) still applies.
+>
+> - **Template skeleton:** `templates/cv/lato-raleway-modern/template.tex` — use this as the structural reference instead of the stock moderncv template
+> - **Manifest:** `templates/cv/lato-raleway-modern/TEMPLATE.md` — read this for style rules and known pitfalls before drafting
+> - **Source extension:** `.tex`
+> - **Compile command:** `cd cv && xelatex -interaction=nonstopmode main_<company>_<role>.tex` (not `lualatex` — this template's class needs `fontspec`-compatible engines but was tested with `xelatex` to match the cover-letter toolchain)
+> - **Fonts:** Lato + Raleway, bundled in `templates/cv/lato-raleway-modern/fonts/` — copy that `fonts/` folder and `resume.cls` into `cv/` (alongside the compiled `.tex`) if they are not already there
+> - **Page limit:** exactly 2 page(s)
+> - **Output file:** `cv/main_<company>_<role>.tex`; copy `resume.cls` and the `fonts/` directory from `templates/cv/lato-raleway-modern/` into `cv/` so the compile can find them by relative path
+<!-- END ACTIVE-TEMPLATE -->
+
 <!-- SETUP: Profile statements and section ordering are personalized by running /setup -->
 
 ## Template: LaTeX moderncv (Banking Style)
@@ -115,12 +129,13 @@ When the role sits outside your home domain, **lead with the domain-transfer arg
 
 **Create 2-3 profile statement templates for your main role types:**
 
-<!-- SETUP: These are populated based on your background -->
-**For [YOUR_PRIMARY_ROLE_TYPE] roles:**
-> [YOUR_PROFILE_STATEMENT_TEMPLATE_1]
+**For AI / Applied-AI Engineer roles:**
+> Software Developer with nearly two years of enterprise engineering experience, specializing in GenAI-assisted SDLC automation, multi-agent systems, and developer tooling. Built a 35+ agent framework and Python/SQLite code knowledge graph that gives developers and AI agents verified architectural context. Brings hands-on C\#, TypeScript, Python, SQL, CI/CD, and GitHub Copilot experience to practical AI engineering problems.
 
-**For [YOUR_SECONDARY_ROLE_TYPE] roles:**
-> [YOUR_PROFILE_STATEMENT_TEMPLATE_2]
+**For .NET / Full-Stack Engineer roles:**
+> Software Developer with nearly two years of experience delivering enterprise software using C\#, TypeScript, Python, SQL, and Angular. Combines customer-facing full-stack delivery with automated testing, CI/CD, architecture analysis, and GenAI-assisted developer tooling. Delivered a formula-builder feature from concept to release in 30 days with 90\% customer acceptance and a zero-downtime migration two weeks early.
+
+For India-targeted applications, state the exact role title from the posting where it truthfully reflects the candidate's experience. Reuse exact technical terms only when supported by `01-candidate-profile.md`; do not add cloud, framework, or AI keywords merely to increase ATS coverage.
 
 Statements labeled *[Used for: <company>_<role>]* were extracted from archived application drafts by `/setup` Path A. They are **phrasing references, never fact sources**: when drafting from one, every factual claim still comes from `01-candidate-profile.md` - a past tailored draft does not vouch for its own accuracy.
 

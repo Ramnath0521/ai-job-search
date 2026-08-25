@@ -1,0 +1,65 @@
+%% CV Template — lato-raleway-modern
+%% Compile with: xelatex -interaction=nonstopmode <file>.tex
+%% Fonts and resume.cls must sit alongside the compiled .tex (or be copied in).
+
+\documentclass{resume}
+
+\begin{document}
+
+\namesection{[FIRST_NAME]}{[LAST_NAME]}{[ROLE TAGLINE — 1 line, tailored per application]}
+\contactrow{\faEnvelope\ \href{mailto:[YOUR_EMAIL]}{[YOUR_EMAIL]} \quad\textbar\quad \faMobile\ [YOUR_PHONE] \quad\textbar\quad \faLinkedin\ \href{[YOUR_LINKEDIN_URL]}{LinkedIn}}
+
+% ============================================================
+%   PROFILE
+% ============================================================
+{\fontspec[Path=fonts/raleway/]{Raleway-Medium}\fontsize{10pt}{13pt}\selectfont
+[3-4 line profile statement tailored to the target role.]
+}
+
+% ============================================================
+%   CORE COMPETENCIES
+% ============================================================
+\section{Core Competencies}
+\skillcat{[Category 1]}{[items]}
+\skillcat{[Category 2]}{[items]}
+\skillcat{[Category 3]}{[items]}
+\skillcat{[Category 4]}{[items]}
+\skillcat{[Category 5]}{[items]}
+
+% ============================================================
+%   PROFESSIONAL EXPERIENCE
+% ============================================================
+\section{Professional Experience}
+
+\entryheader{[Job Title]}{[Start]--[End]}
+\entrysub{[Company] \textbullet\ [Location]}
+\begin{tightemize}
+\item [Bullet 1]
+\item [Bullet 2]
+\item [Bullet 3]
+\end{tightemize}
+\entryspace
+
+\entryheader{[Job Title]}{[Start]--[End]}
+\entrysub{[Company] \textbullet\ [Location]}
+\begin{tightemize}
+\item [Bullet 1]
+\item [Bullet 2]
+\end{tightemize}
+
+% ============================================================
+%   EDUCATION
+% ============================================================
+\section{Education}
+\entryheader{[Degree]}{[Start]--[End]}
+\entrysub{[Institution] \textbullet\ [Location]}
+
+% ============================================================
+%   HONORS AND AWARDS
+% ============================================================
+\section{Honors and Awards}
+\begin{tightemize}
+\item \textbf{[Award Name]} — [one-line description] ([Year])
+\end{tightemize}
+
+\end{document}

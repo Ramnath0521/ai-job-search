@@ -20,34 +20,45 @@ Secondary (company career pages via Google):
 
 Queries are grouped by priority. Each query should be combined with your location terms (e.g. your city, region, or metro area) where the site supports it.
 
-### Priority 1: Core Target Roles
+### Priority 1: AI and Applied-AI Roles
 
 These match your strongest and most desired career direction.
 
 ```
-site:naukri.com ".NET Engineer" "Hyderabad"
-site:naukri.com "Full Stack Developer" "C#" "Mumbai"
+site:linkedin.com/jobs "AI Engineer" "Hyderabad"
 site:linkedin.com/jobs "Applied AI Engineer" "India"
-site:linkedin.com/jobs "AI Engineer" "GenAI" "Hyderabad"
+site:linkedin.com/jobs "Generative AI Engineer" "India"
+site:linkedin.com/jobs "LLM Engineer" "India"
+site:linkedin.com/jobs "AI Platform Engineer" "India"
+site:naukri.com "Software Engineer AI" "Hyderabad"
 ```
 
-### Priority 2: Key Domain & Skills
+### Priority 2: .NET and Full-Stack Roles
 
 These match your domain expertise.
 
 ```
-site:naukri.com "Angular" "Typescript" "Hyderabad" OR "Mumbai"
-site:naukri.com "Python" "GenAI" "Bengaluru"
-site:linkedin.com/jobs "GHCP" OR "GitHub Copilot" "India"
+site:naukri.com ".NET Engineer" "Hyderabad"
+site:naukri.com "Backend Engineer" "C#" "Mumbai"
+site:naukri.com "Full Stack Engineer" "Angular" "Hyderabad"
+site:naukri.com "Full Stack Developer" "C#" "Mumbai"
+site:linkedin.com/jobs "C# Developer" "India"
+site:linkedin.com/jobs "ASP.NET Core Developer" "India"
+site:linkedin.com/jobs "Application Developer" ".NET" "India"
 ```
 
-### Priority 3: Adjacent Technical Roles
+### Priority 3: Software, Platform, and Developer-Tooling Roles
 
 Adjacent roles you could pivot into.
 
 ```
-site:naukri.com "Software Engineer" "AI" "Hyderabad"
-site:naukri.com "Backend Engineer" "C#" "Mumbai"
+site:linkedin.com/jobs "Software Engineer" "India"
+site:linkedin.com/jobs "Platform Engineer" "India"
+site:linkedin.com/jobs "Product Engineer" "India"
+site:linkedin.com/jobs "Python Engineer" "India"
+site:linkedin.com/jobs "GitHub Copilot" "India"
+site:naukri.com "Angular" "TypeScript" "Hyderabad"
+site:naukri.com "Python" "GenAI" "Bengaluru"
 ```
 
 ### Priority 4: Broader Technical / Consulting
@@ -55,18 +66,32 @@ site:naukri.com "Backend Engineer" "C#" "Mumbai"
 Wider net for general technical roles.
 
 ```
-site:naukri.com "GenAI" developer "Hyderabad"
-site:linkedin.com/jobs "AI developer" "Mumbai"
-site:naukri.com "technical consultant" "AI" "Bengaluru"
+site:naukri.com "GenAI Developer" "Hyderabad"
+site:linkedin.com/jobs "AI Developer" "Mumbai"
+site:naukri.com "Technical Consultant" "AI" "Bengaluru"
+site:linkedin.com/jobs "Cloud Engineer" "Azure" "India"
+
+## Keyword Strategy
+
+Use exact terms from the posting when the candidate's experience supports them. Prioritize:
+
+`C#`, `.NET`, `ASP.NET`, `Entity Framework`, `SQL Server`, `REST APIs`, `Angular`, `TypeScript`, `Python`, `Git`, `Docker`, `Azure`, `CI/CD`, `Microservices`, `GenAI`, `LLMs`, `Prompt Engineering`, `GitHub Copilot`, and `MCP`.
+
+Do not add a keyword solely for search visibility when it cannot be supported by the candidate profile or CV.
+
+## Target Companies
+
+Prioritize roles at product and engineering-led organizations where .NET, Angular, developer tooling, and applied AI overlap: Microsoft, Oracle, ServiceNow, Salesforce, Atlassian, NVIDIA, EPAM, Thoughtworks, Persistent, GlobalLogic, LTIMindtree, Razorpay, PhonePe, Jio Platforms, BrowserStack, CRED, and well-funded AI startups. This is a preference signal, not an exclusion filter.
 ```
 
 ## Location Filter
 
 When evaluating results, verify the job location is within reasonable commute distance from your home. Define acceptable areas:
-- Hyderabad, Telangana
-- Mumbai, Maharashtra
-- Bengaluru, Karnataka (Next Priority)
-- Remote (India)
+- Hyderabad, Telangana (first priority)
+- Mumbai, Maharashtra (second priority)
+- Bengaluru, Karnataka (third priority)
+- Pune, Maharashtra (optional)
+- Remote roles open to candidates in India
 
 ## Date Filter
 

@@ -2,132 +2,78 @@
 %% Comprehensive overview of all competencies, experience, and achievements.
 %% Use as a master reference when tailoring role-specific CVs.
 %%
-%% SETUP: Run /setup to populate this with your actual information.
-%% Compile with: lualatex main_example.tex
-%% (pdflatex often fails on modern MiKTeX with fontawesome5 font-expansion errors.)
+%% Template: lato-raleway-modern (see templates/cv/lato-raleway-modern/TEMPLATE.md)
+%% Compile with: xelatex main_example.tex
+%% Requires resume.cls and fonts/ to sit alongside this file in cv/.
 
-\documentclass[11pt,a4paper,sans]{moderncv}
-\moderncvstyle{banking}
-\moderncvcolor{blue}
-
-% Force both first and last name AND section headings to render in moderncv
-% blue (color1). Default banking on lualatex+MiKTeX leaves these black, which
-% looks inconsistent with the rest of the blue accent scheme.
-\renewcommand*{\firstnamestyle}[1]{{\fontsize{34}{36}\bfseries\upshape\color{color1}#1}}
-\renewcommand*{\lastnamestyle}[1]{{\fontsize{34}{36}\bfseries\upshape\color{color1}#1}}
-\renewcommand*{\sectionstyle}[1]{{\sectionfont\color{color1}#1}}
-
-\usepackage[utf8]{inputenc}
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,
-    urlcolor=blue,
-    pdftitle={Ramnath Tatikonda - CV},
-    pdfpagemode=FullScreen,
-}
-\usepackage[scale=0.80]{geometry}
-\usepackage{import}
-
-% personal data
-\name{Ramnath}{Tatikonda}
-\address{Mumbai}{India}{}
-\phone[mobile]{+91 9137964198}
-\email{rtatikonda417@gmail.com}
-\extrainfo{\href{https://linkedin.com/in/ramnath-tatikonda-a63a191b0}{LinkedIn}}
+\documentclass{resume}
 
 \begin{document}
 
-\makecvtitle
+\namesection{Ramnath}{Tatikonda}{Software Developer specializing in GenAI-Assisted SDLC Automation}
+\contactrow{\faEnvelope\ \href{mailto:rtatikonda417@gmail.com}{rtatikonda417@gmail.com} \quad\textbar\quad \faMobile\ +91 9137964198 \quad\textbar\quad \faLinkedin\ \href{https://linkedin.com/in/ramnath-tatikonda-a63a191b0}{LinkedIn}}
 
 % ============================================================
 %     PROFILE STATEMENT
 % ============================================================
-
-\vspace{6pt}
-\small{Software Developer with nearly 2 years of experience building enterprise software and GenAI-assisted SDLC automation using C\#, TypeScript, Python, SQL, and Angular. Experienced in multi-agent AI systems, source-code knowledge graphs, self-upgrading knowledge bases, and CI/CD automation. Delivered features with 90\% customer acceptance, zero-downtime migration, and 100\% test coverage.}
+{\fontspec[Path=fonts/raleway/]{Raleway-Medium}\fontsize{10pt}{13pt}\selectfont
+Software Developer with nearly 2 years of experience building enterprise software and GenAI-assisted SDLC automation using C\#, TypeScript, Python, SQL, and Angular. Experienced in multi-agent AI systems, source-code knowledge graphs, self-upgrading knowledge bases, and CI/CD automation. Delivered features with 90\% customer acceptance, zero-downtime migration, and 100\% test coverage.
+}
 
 % ============================================================
 %     CORE COMPETENCIES
 % ============================================================
-
 \section{Core Competencies}
-\vspace{1pt}
-\begin{itemize}
-
-\item \textbf{Languages}: C\#, TypeScript, JavaScript, Python, SQL
-
-\item \textbf{Frameworks}: .NET Framework, ASP.NET, Entity Framework, Angular, React.js, Node.js
-
-\item \textbf{GenAI / AI Engineering}: GitHub Copilot, MCP, Multi-Agent Systems, Prompt Engineering, Actor-Critic Pattern, Judge Pattern, AI Code Review Automation
-
-\item \textbf{DevOps / Data / Quality}: Azure DevOps, Azure Pipelines, GitHub Actions, CI/CD, Git, SQL Server, SQLite, NUnit, TDD, Unit/Integration Testing
-
-\item \textbf{Specialized}: SDLC Automation, Source Code Knowledge Graphs, Requirement Engineering, Legacy Migration, Workflow Automation, Architecture Analysis
-
-\end{itemize}
+\skillcat{Languages}{C\#, TypeScript, JavaScript, Python, SQL}
+\skillcat{Frameworks}{.NET Framework, ASP.NET, Entity Framework, Angular, React.js, Node.js}
+\skillcat{GenAI / AI Engineering}{GitHub Copilot, MCP, Multi-Agent Systems, Prompt Engineering, Actor-Critic Pattern, Judge Pattern, AI Code Review Automation}
+\skillcat{DevOps / Data / Quality}{Azure DevOps, Azure Pipelines, GitHub Actions, CI/CD, Git, SQL Server, SQLite, NUnit, TDD, Unit/Integration Testing}
+\skillcat{Specialized}{SDLC Automation, Source Code Knowledge Graphs, Requirement Engineering, Legacy Migration, Workflow Automation, Architecture Analysis}
 
 % ============================================================
 %     PROFESSIONAL EXPERIENCE
 % ============================================================
-
 \section{Professional Experience}
-\vspace{3pt}
-\begin{itemize}
 
-% --- Most Recent Role ---
-\item{\cventry{Aug 2025--Present}{Software Developer / Engineer}{Siemens Technology and Services Pvt. Ltd.}{Bengaluru, India}{}{\vspace{1pt}
-\begin{itemize}
-    \item Architected a 35+ agent, 21-skill multi-agent AI-assisted SDLC framework enabling automated reviews, coding guideline enforcement, requirement engineering, workflow analysis and reusable development support.
-    \item Built repo-wide .github automation for workflows, templates, standards, agents and skills used by developers, testers and product owners across SDLC activities.
-    \item Designed a 4-phase self-upgrading AI knowledge-base system with drift detection, freshness scoring, citation provenance, governed promotion, rollback strategy and a 17-test deterministic evaluation harness to reduce stale AI context and hallucinated outputs.
-\end{itemize}}}
+\entryheader{Software Developer / Engineer}{Aug 2025--Present}
+\entrysub{Siemens Technology and Services Pvt. Ltd. \textbullet\ Bengaluru, India}
+\begin{tightemize}
+\item Architected a 35+ agent, 21-skill multi-agent AI-assisted SDLC framework enabling automated reviews, coding guideline enforcement, requirement engineering, workflow analysis and reusable development support.
+\item Built repo-wide .github automation for workflows, templates, standards, agents and skills used by developers, testers and product owners across SDLC activities.
+\item Designed a 4-phase self-upgrading AI knowledge-base system with drift detection, freshness scoring, citation provenance, governed promotion, rollback strategy and a 17-test deterministic evaluation harness to reduce stale AI context and hallucinated outputs.
+\end{tightemize}
+\entryspace
 
-\vspace{3pt}
-
-% --- Previous Role ---
-\item{\cventry{Aug 2024--Aug 2025}{Graduate Trainee Engineer – Apprentice}{Siemens Technology and Services Pvt. Ltd.}{Bengaluru, India}{}{\vspace{1pt}
-\begin{itemize}
-    \item Built a Python/SQLite source-code knowledge graph indexing 1,884 files into $\sim$30K nodes and $\sim$37K edges across C\# and TypeScript; exposed 9 MCP tools and a 5-view dashboard for blast-radius analysis, workflow tracing and architecture health scoring.
-    \item Evolved the Code Graph Tool from v0.13 to v0.17.1 across 37+ iterations, modularizing a 17,967-LOC monolith to a 97/100 architecture score, reducing max method size by 74\% and adding 1,196 validation checks.
-    \item Delivered a customer-facing formula-builder feature from concept to release in 30 days; built a 3-day POC validating $\sim$95\% workflows, saved 27 person-days, and achieved 90\% customer acceptance vs. 80\% target.
-    \item Led a large-scale product rebranding and compatibility migration across application binaries, services, serialization, templates and test assets; delivered 2 weeks early with zero downtime, 100\% test coverage and 300+ automated tests migrated.
-    \item Drove GenAI adoption through GenAI Connect sessions, GitHub Copilot enablement, MCP workshops and SGI Amplify contributions; participated in code reviews, feature scoping, interviews and delivered 313+ commits since joining.
-\end{itemize}}}
-
-\end{itemize}
+\entryheader{Graduate Trainee Engineer -- Apprentice}{Aug 2024--Aug 2025}
+\entrysub{Siemens Technology and Services Pvt. Ltd. \textbullet\ Bengaluru, India}
+\begin{tightemize}
+\item Built a Python/SQLite source-code knowledge graph indexing 1,884 files into $\sim$30K nodes and $\sim$37K edges across C\# and TypeScript; exposed 9 MCP tools and a 5-view dashboard for blast-radius analysis, workflow tracing and architecture health scoring.
+\item Evolved the Code Graph Tool from v0.13 to v0.17.1 across 37+ iterations, modularizing a 17,967-LOC monolith to a 97/100 architecture score, reducing max method size by 74\% and adding 1,196 validation checks.
+\item Delivered a customer-facing formula-builder feature from concept to release in 30 days; built a 3-day POC validating $\sim$95\% workflows, saved 27 person-days, and achieved 90\% customer acceptance vs. 80\% target.
+\item Led a large-scale product rebranding and compatibility migration across application binaries, services, serialization, templates and test assets; delivered 2 weeks early with zero downtime, 100\% test coverage and 300+ automated tests migrated.
+\item Drove GenAI adoption through GenAI Connect sessions, GitHub Copilot enablement, MCP workshops and SGI Amplify contributions; participated in code reviews, feature scoping, interviews and delivered 313+ commits since joining.
+\end{tightemize}
 
 % ============================================================
 %     EDUCATION
 % ============================================================
-
 \section{Education}
-\vspace{1pt}
-\begin{itemize}
 
-\item{\cventry{June 2020--May 2024}{B.E in Electronics \& Telecommunication}{Vidyalankar Institute of Technology}{Mumbai, India}{}{\vspace{1pt}
-CGPI: 9.59
-}}
+\entryheader{B.E in Electronics \& Telecommunication}{June 2020--May 2024}
+\entrysub{Vidyalankar Institute of Technology \textbullet\ Mumbai, India}
+{\fontspec[Path=fonts/raleway/]{Raleway-Medium}\fontsize{10pt}{13pt}\selectfont CGPI: 9.59}
+\entryspace
 
-\vspace{3pt}
-
-\item{\cventry{June 2018--March 2020}{HSC(PCM)}{SIES College of Arts, Science and Commerce}{Mumbai, India}{}{\vspace{1pt}
-Percentage: 89.85\%
-}}
-
-\end{itemize}
-
+\entryheader{HSC (PCM)}{June 2018--March 2020}
+\entrysub{SIES College of Arts, Science and Commerce \textbullet\ Mumbai, India}
+{\fontspec[Path=fonts/raleway/]{Raleway-Medium}\fontsize{10pt}{13pt}\selectfont Percentage: 89.85\%}
 
 % ============================================================
 %     HONORS AND AWARDS
 % ============================================================
-
 \section{Honors and Awards}
-\vspace{1pt}
-\begin{itemize}
-\item{\textbf{Siemens LEAD Award for Emerging Excellence} -- Recognized for exceptional ownership, problem-solving, proactive innovation, and high-impact delivery within less than 5 years of experience (2026).}
-\end{itemize}
+\begin{tightemize}
+\item \textbf{Siemens LEAD Award for Emerging Excellence} -- Recognized for exceptional ownership, problem-solving, proactive innovation, and high-impact delivery within less than 5 years of experience (2026).
+\end{tightemize}
 
 \end{document}
-

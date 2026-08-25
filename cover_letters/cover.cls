@@ -21,9 +21,9 @@
 \renewcommand\refname{\vskip -1.5cm}
 
 % Color definitions
-\definecolor{date}{HTML}{666666}
+\definecolor{date}{HTML}{6B6B6B}
 \definecolor{primary}{HTML}{2b2b2b}
-\definecolor{headings}{HTML}{6A6A6A}
+\definecolor{headings}{HTML}{1F3A5F}
 \definecolor{subheadings}{HTML}{333333}
 
 % Set main fonts
@@ -42,8 +42,8 @@ Last Updated on \today
 \newcommand{\namesection}[3]{
 \centering{
 \fontsize{40pt}{60pt}
-\fontspec[Path = OpenFonts/fonts/lato/]{Lato-Hai}\selectfont #1 
-\fontspec[Path = OpenFonts/fonts/lato/]{Lato-Lig}\selectfont #2
+\color{headings}\fontspec[Path = OpenFonts/fonts/lato/]{Lato-Hai}\selectfont #1\
+\color{primary}\fontspec[Path = OpenFonts/fonts/lato/]{Lato-Lig}\selectfont #2
 } \\[5pt]
 \centering{
 \color{headings}

@@ -13,7 +13,7 @@ framework_version: 1.0.0
 - **GitHub:** N/A
 - **Languages:** English (fluent), Hindi (native), Marathi (native)
 - **Status:** Employed at Siemens Technology and Services Pvt. Ltd.
-- **Constraints:** Prefers Hyderabad or Mumbai; Bengaluru acceptable as 3rd priority. Open to Remote/Hybrid.
+- **Constraints:** Location priority: Hyderabad, then Mumbai, then Bengaluru. Pune is optional. Open to remote or hybrid roles based in India.
 
 ## Education
 
@@ -58,6 +58,12 @@ Bengaluru, India
 
 ## Awards
 - **Siemens LEAD Award for Emerging Excellence** (2026) – Recognized for exceptional ownership, problem-solving, proactive innovation, and high-impact delivery within less than 5 years of experience.
+
+## Target Roles and Compensation
+- **Target roles:** AI Engineer, Applied AI Engineer, Generative AI Engineer, LLM Engineer, AI Platform Engineer, .NET/Backend Engineer, Full-Stack Engineer, Platform Engineer, Product Engineer, and Software Engineer.
+- **Current compensation:** 6 LPA CTC.
+- **Target compensation:** 11-15 LPA; roles materially below 10.5-11 LPA require an exceptional learning or career-growth case.
+- **Target employers:** Product and engineering-led companies, especially those offering modern .NET/Angular work, developer tooling, applied AI, and clear growth paths.
 
 ## References
 Available upon request.

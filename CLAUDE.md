@@ -12,7 +12,7 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 
 ### Identity
 - **Name:** Ramnath Tatikonda
-- **Location:** Mumbai / Bengaluru, India (Target: Hyderabad, Mumbai, Bangalore)
+- **Location:** Mumbai / Bengaluru, India (priority: Hyderabad, then Mumbai, then Bengaluru; Pune optional; remote India welcome)
 - **Languages:** English
 - **CV language:** English
 - **Status:** Employed
@@ -51,12 +51,13 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 - Building enterprise software and GenAI-assisted automation.
 - Impactful delivery and high customer acceptance.
 
-### Target Sectors
-- Tech / IT Services / AI: Microsoft, Amazon, Google, EPAM Systems, ThoughtWorks, Capgemini, Accenture.
+### Target Roles and Employers
+- **Roles:** AI Engineer, Applied AI Engineer, Generative AI Engineer, LLM Engineer, AI Platform Engineer, .NET/Backend Engineer, Full-Stack Engineer, Platform Engineer, Product Engineer, and Software Engineer.
+- **Employers:** Microsoft, Oracle, ServiceNow, Salesforce, Atlassian, NVIDIA, EPAM, Thoughtworks, Persistent, GlobalLogic, LTIMindtree, Razorpay, PhonePe, Jio Platforms, BrowserStack, CRED, and high-growth AI startups.
 
 ### Deal-breakers
 - Low appraisal / stagnant learning environments.
-- Salary expectations not met (Target: 80% to 150% hike on current 6L INR CTC).
+- Salary expectations not met: target 11-15 LPA from current 6 LPA CTC. Treat roles likely to pay below 10.5-11 LPA as a concern unless their learning or growth opportunity is exceptional.
 
 ## Repo Structure
 - `cv/` - LaTeX CV variants (moderncv template, banking style)

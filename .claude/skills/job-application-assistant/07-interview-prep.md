@@ -72,7 +72,10 @@ Keep answers to 1-2 minutes. Be specific. End with what you learned or would do 
 > "I can be too deep in the details when a broader view would be more efficient. I've been actively working on this — I now set explicit 'zoom-out' checkpoints for myself when I'm mid-build, and I've found that talking to stakeholders earlier (not just at delivery) actually makes the end result better."
 
 ### "Why are you leaving Siemens?"
-> "Siemens has been an excellent start to my career and I'm proud of what I've delivered there. I'm now looking for a role in [Hyderabad/Mumbai] where I can continue growing technically, specifically in AI engineering and full-stack development, and where my contributions will be rewarded with strong career progression and appraisal."
+> "Siemens has been an excellent start to my career and I'm proud of what I've delivered there. I'm now looking for a role in [Hyderabad/Mumbai/Bengaluru or remote India] where I can continue growing technically, specifically in applied AI and full-stack development, and where I can take on broader engineering ownership with clear career progression."
+
+### "What are your compensation expectations?"
+> "Based on the scope of the role, my experience, and current market expectations, I am targeting 11 to 15 LPA. I am open to discussing the complete package and the role's growth opportunity, especially for a position where I can contribute to applied AI, developer tooling, or modern full-stack engineering."
 
 ### "Why this company specifically?"
 > Customize per company. Must reference: specific projects, company values, market position, or team structure. Never give a generic answer. Research LinkedIn, company blog, and recent news before each interview.
