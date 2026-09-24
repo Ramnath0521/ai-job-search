@@ -33,11 +33,31 @@ State how many jobs will be ranked before proceeding.
 
 ---
 
+## Step 1.5: Cheap Pre-Filter (before spending any fetch/model tokens)
+
+Fetching a posting and scoring it against the rubric is the expensive part of this command - every job that reaches Step 2 costs real tokens whether it turns out to be a good fit or not. Before dispatching a single agent, apply a **free, title/company-only** pass over the candidate list and drop anything that is deterministically out of scope:
+
+- **Seniority mismatch by title alone:** `Staff`, `Principal`, `Director`, `VP`/`Vice President`, `Head of`, or a bare `Lead`/`Manager` title where the candidate profile's years of experience is far below what that title implies. (A posting that turns out to state a *lower* actual year requirement than the title suggests is a rare miss worth accepting - the point is to catch the common case cheaply, not to be perfect.)
+- **Domain mismatch by title alone:** roles clearly outside the candidate's field (e.g. mechanical/civil/hardware "Product Engineer", pure QA/manual-testing titles, telecom/networking specialist roles) when the profile's target roles are software/AI/platform engineering.
+- **Already covered:** anything the exclusion set (tracker + non-`new` status) already removes.
+
+Mark pre-filtered jobs `status: "weak_fit_unranked"` in `seen_jobs.json` with a one-line reason (e.g. `"title-level seniority mismatch (Staff/8+ yrs vs ~2 yrs profile)"`) - **do not** silently drop them; they stay visible to the user and are excluded from future `/rank` runs the same way `expired`/`ranked` are, but a `--all` re-rank or a direct `/apply <url>` can still reach them since this is a cheap heuristic, not a verdict.
+
+State the split before proceeding: "N candidates -> M after pre-filter (K dropped on title/domain)."
+
+---
+
 ## Step 2: Batch-Fetch and Score
 
-Dispatch parallel `general-purpose` agents via the **Agent tool**, ~5 jobs per agent (a single agent is fine for ≤5 jobs). Token-efficiency rules, consistent with `/apply`:
+**Default batch size is 15 jobs per agent, not 5.** The fixed cost of a batch (system prompt, tool schemas, the rubric text) is paid once per agent regardless of how many jobs it scores, so a bigger batch amortizes that cost across more jobs - this is the single biggest lever on total token spend for a `/rank` run. Use a smaller batch only when a job's posting is unusually long, or drop to `--top`-sized single-agent runs for small re-rank requests.
 
-- Pass each agent everything it needs **inline in the prompt** - the job list (title, company, URL) and a compact scoring rubric extracted from the files you read in Step 1: the strong/moderate/weak skill match areas, direct/adjacent experience domains, behavioral thrive/drain factors, career goals, deal-breakers, and the location constraints. Do **not** make agents re-read the profile files.
+**Dispatch these agents on the `haiku` model, not the default.** Pass `model: "haiku"` in the Agent tool call. Triage scoring is a mechanical task - read the posting, check it against a fixed rubric, fill in a JSON template - and does not need frontier-model reasoning; `/apply`'s deeper Step 1 evaluation (company research, nuanced judgment calls) still runs on the default model. If a specific job's triage score looks internally inconsistent or the gaps read as garbled, re-score that one job standalone rather than escalating the whole batch.
+
+**Before dispatching, if the pre-filtered candidate count is large (40+ jobs / 3+ agents), tell the user the plan** - agent count, batch size, model - and let them adjust scope (a smaller `--top`, a focus-area filter) before you spend the tokens, rather than launching a large parallel fan-out silently. This mirrors what `/scrape`'s size already prompts for; `/rank` should too.
+
+Token-efficiency rules, consistent with `/apply`:
+
+- Pass each agent everything it needs **inline in the prompt** - the job list (title, company, URL) and a **compact** scoring rubric extracted from the files you read in Step 1: the strong/moderate/weak skill match areas, direct/adjacent experience domains, behavioral thrive/drain factors, career goals, deal-breakers, and the location constraints. Do **not** make agents re-read the profile files. Keep the inline rubric tight (a dense paragraph or two, not a restatement of the full framework) - it is repeated in full for every agent, so every extra sentence in it is multiplied by the agent count.
 - Agents fetch each posting URL with WebFetch and score **only from actually fetched content**. If a URL is dead, redirects to a listing page, or the posting has expired, the agent marks that job `expired` - it never scores from the title alone and never fabricates posting content. If `FIRECRAWL_API_KEY` is set (see `.agents/skills/firecrawl-search/SKILL.md`) and WebFetch returns nothing, tell the agent to retry with `firecrawl-search detail <url>` before marking the job `expired` - client-side-rendered ATS pages (Workday, Ashby, some Greenhouse-embedded listings) are frequently just a JS-rendering gap, not a dead posting.
 - Scope is triage: posting text vs. rubric. **No company research, no salary lookup, no web searches** - that depth belongs to `/apply`.
 
@@ -126,4 +146,5 @@ Rules for the presentation:
 3. **Triage depth only.** No company research, no salary lookups, no reviewer agents - `/rank` exists to be cheap enough to run on every scrape batch.
 4. **Deal-breakers veto scores.** A 90-point job that fails a location deal-breaker is excluded, not ranked first.
 5. **Honest scoring.** Gaps are reported per job; a low-scoring posting is presented as such. The score bands and weights come from `04-job-evaluation.md` - if the user disagrees with a ranking, the fix is updating their profile or the framework, not bending scores.
-6. **State stays consistent.** `seen_jobs.json` fields are only added, never restructured, so `/scrape`'s dedup keeps working; the tracker is read-only for this command.
+6. **State stays consistent.** `seen_jobs.json` fields are only added, never restructured, so `/scrape`'s dedup keeps working; the tracker is read-only for this command. `weak_fit_unranked` (Step 1.5) is treated the same as `expired`/`ranked` for dedup purposes on future runs.
+7. **Cost-conscious by default.** Pre-filter before fetching (Step 1.5), batch 15 jobs per agent not 5, dispatch triage agents on `haiku`, and tell the user the agent-count/model plan before a large (40+ job) fan-out. These are not optional optimizations for a slow day - a prior run without them repeatedly hit session usage limits mid-rank, which is the failure mode this rule exists to prevent.
